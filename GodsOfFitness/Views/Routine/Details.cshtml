@@ -1,0 +1,35 @@
+﻿@model GodsOfFitness.Models.Routine
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Routine</legend>
+
+    <div class="display-label">User</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.User.Email)
+    </div>
+
+    <div class="display-label">Type</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Type.Name)
+    </div>
+
+    <div class="display-label">Title</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">Description</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.RoutineId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

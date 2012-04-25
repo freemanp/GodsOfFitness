@@ -1,0 +1,51 @@
+﻿@model IEnumerable<GodsOfFitness.Models.Routine>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            User
+        </th>
+        <th>
+            Type
+        </th>
+        <th>
+            Title
+        </th>
+        <th>
+            Description
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Type.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.RoutineId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.RoutineId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.RoutineId })
+        </td>
+    </tr>
+}
+
+</table>

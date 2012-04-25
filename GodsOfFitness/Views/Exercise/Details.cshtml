@@ -1,0 +1,35 @@
+﻿@model GodsOfFitness.Models.Exercise
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Exercise</legend>
+
+    <div class="display-label">User</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.User.Email)
+    </div>
+
+    <div class="display-label">Title</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">Description</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="display-label">DemoLink</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DemoLink)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ExcerciseId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
